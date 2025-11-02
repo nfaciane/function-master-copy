@@ -121,16 +121,19 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    //if object.noise NOT equal array; key in operator object
+    //if object does NOT have noises key; use key in operator object
     if(!"noises" in object){
+        //return there are no noises
         return "there are no noises";
-    } else{
+    } else{ //if object has noises key AND noises key value is array AND array length NOT empty
         if(Array.isArray(object.noises) && object.noises.length > 1){
+            //return values in array in one string
             return object.noises.join(" ");
-        } else{
+        } else{ //if object has noises key AND noises key value is array AND array length empty
 
         }
     }
+    //return there are no noises
     return "there are no noises";
 }
 
@@ -139,7 +142,12 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    if(string.includes(word)){
+        return true;
+    } else{
 
+    }
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -147,7 +155,10 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+    //add name to object key value array friends
+    object.friends.push(name);
+    //return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -155,7 +166,18 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    //if object does NOT have key friends
+    if(!("friends" in object)){
+        //return false
+        return false;
+    } else{ //if object includes name
+        if(object.friends.includes(name)){
+            //return true
+            return true;
+        } 
+    }
+    //if object does NOT include name; return false
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
