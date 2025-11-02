@@ -104,7 +104,16 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    //identify string value; convert string into array
+    let name = object.name.split("");
+    //modify first letter
+    name[0] = name[0].toUpperCase();
+    //identify string value; convert string into array
+    let species = object.species.split("");
+    //modify first letter
+    species[0] = species[0].toUpperCase();
+    //return string(use concat operator) with string value join letters to words
+    return name.join("") + " " + "is a" + " " + species.join("");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -112,7 +121,17 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    //if object.noise NOT equal array; key in operator object
+    if(!"noises" in object){
+        return "there are no noises";
+    } else{
+        if(Array.isArray(object.noises) && object.noises.length > 1){
+            return object.noises.join(" ");
+        } else{
 
+        }
+    }
+    return "there are no noises";
 }
 
 //////////////////////////////////////////////////////////////////////
