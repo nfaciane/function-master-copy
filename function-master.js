@@ -185,16 +185,43 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    //create storage array to hold list of names that arent the person's name and dont match the person's friends
     let list = [];
+    //create storage variable to identify object with name match and friends
+    let person;
     //loop through array of objects
     for(let i = 0; i < array.length; i++){
-        list.push(Object.values(array[i]));
-        if(array[i].name === name){
-            list.remove(array[i].friends, array[i].name);
+        //if name value NOT match name value in object
+        if(array[i].name !== name){
+            //push name value of objects in array to storage array list
+            list.push(array[i].name);
+        } else{ //if name value match name value of object; dont push object name value and friends values    
+            //person equals object where name matches
+            person = array[i];
         }
     }
-    //return
-    return list;
+    //if person not found in array
+    if(!(array.includes(person))){
+        //return empty array
+        return [];
+    } else {
+        //loop through friends string values of match object person
+        for(let j = 0; j < person.friends.length; j++){
+            //if friends string values are included in list of names
+            if(list.includes(person.friends[j])){
+                //remove strings in list that match strings in person object
+                //find index of each match; use indexOf method
+                let findFriendIndex = list.indexOf(person.friends[j]);
+                //remove match in list array using index found; use slice method
+                list.splice(findFriendIndex, 1);
+                
+            } 
+
+        }
+       
+    }
+            //return
+            return list;
 }
 
 //////////////////////////////////////////////////////////////////////
