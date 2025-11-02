@@ -54,7 +54,13 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    string.split();
+    let letters;
+    //convert string into array of letters
+    letters = string.split(""); //["j", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+    //modify first letter to uppercase; 
+    letters[0] = letters[0].toUpperCase(); //["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+    //return string with uppercase first letter
+    return letters.join(""); //"JavaScript"
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -62,8 +68,22 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
-}
+    let words;
+    let letters;
+    //convert string to array
+    words = string.split(" "); //["this", "is", "a", "sample", "sentence."]
+    //loop through words array 
+    for(let i = 0; i < words.length; i++){
+        //modify each index to array;
+        words[i] = words[i].split(""); //["t", "h", "i", "s"]
+        //modify first index in each array
+        words[i][0] = words[i][0].toUpperCase(); //["T", "h", "i", "s"]
+        //join letters to words
+        words[i] = words[i].join(""); ////["this", "is", "a", "sample", "sentence."]
+    };
+        //return words to sentence
+        return words.join(" ");
+};
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
