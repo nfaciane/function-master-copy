@@ -90,7 +90,13 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    let name;
+    //convert string into array
+    name = object.name.split("");
+    //modify first letter to uppercase
+    name[0] = name[0].toUpperCase();
+    //return string 'Welcome letters to words!'
+    return "Welcome" + " " + name.join("") + "!";
 }
 
 //////////////////////////////////////////////////////////////////////
