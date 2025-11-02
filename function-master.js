@@ -185,7 +185,16 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    let list = [];
+    //loop through array of objects
+    for(let i = 0; i < array.length; i++){
+        list.push(Object.values(array[i]));
+        if(array[i].name === name){
+            list.remove(array[i].friends, array[i].name);
+        }
+    }
+    //return
+    return list;
 }
 
 //////////////////////////////////////////////////////////////////////
