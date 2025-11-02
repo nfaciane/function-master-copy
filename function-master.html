@@ -47,7 +47,7 @@
       assert.equal(valuesToString(objectOne), "one two crayons dangle");
       assert.equal(valuesToString(objectTwo), "three four ponies dingle");
     });
-
+  
     /* global arrayOrObject  */
     QUnit.test("arrayOrObject() : Should take one argument and return 'array' if its an array and 'object' if its an object", function(assert){
       assert.equal(arrayOrObject({a:"one"}), "object");

@@ -21,7 +21,18 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    return Object.values(object).join(" ");
+    var values;
+    var strings = [];
+    //convert object values into array
+    values = Object.values(object);
+    //loop through value array
+    for(let i = 0; i < values.length; i++){
+         //if value equals string; return and join with space
+    if(typeof values[i] === 'string'){
+        strings.push(values[i]);
+    }
+    }
+   return strings.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
