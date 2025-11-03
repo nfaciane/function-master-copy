@@ -271,7 +271,17 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+    //create storage array
+    let noDuplicatesArray = [];
+    //loop thru array
+    for(let i = 0; i < array.length; i++){
+        //if statement
+        if(!noDuplicatesArray.includes(array[i])){
+            noDuplicatesArray.push(array[i]);
+        } 
+    }
+    //return noDuplicatesArray
+    return noDuplicatesArray;
 }
 
 //////////////////////////////////////////////////////////////////////
