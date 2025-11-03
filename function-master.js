@@ -229,7 +229,15 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    //if key in object; update object
+    if(key in object){
+    //update object
+    object[key] = value;
+    } else { //else; add key to object
+        object[key] = value;
+    }
+    //return modified object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
