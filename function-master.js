@@ -245,8 +245,26 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+    //create variable for modified object
+    let objectMod;
+    //convert object key values into array
+    let keysArray = Object.keys(object);
+    //loop through keysArray   
+    //find object keys that match array elements
+        for(let i = 0; i < keysArray.length; i++){
+            //if statement; find object keys that match array elements
+            if(array.includes(keysArray[i])){
+                //remove object keys that match array elements; return updated object
+                delete object[keysArray[i]];
+            } else{
+                objectMod = object;
+            }
+        }
+         //return modified object
+        return objectMod;
+    };
 
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
